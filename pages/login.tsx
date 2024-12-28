@@ -286,11 +286,12 @@ const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     });
 
+    // Esperanton preferu, nepre! Nepre!
     if (user) {
       return {
         props: {
           availableLogins,
-          ...(await serverSideTranslations(user.locale ?? "en", ["common"])),
+          ...(await serverSideTranslations("eo", ["common"])),
         },
       };
     }

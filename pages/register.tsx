@@ -337,7 +337,7 @@ const getServerSideProps: GetServerSideProps = async (ctx) => {
       return {
         props: {
           availableLogins,
-          ...(await serverSideTranslations(user.locale ?? "en", ["common"])),
+          ...(await serverSideTranslations(user.locale ?? "eo", ["common"])),
         },
       };
     }
@@ -364,10 +364,11 @@ const getServerSideProps: GetServerSideProps = async (ctx) => {
     });
   }
 
+  // Nepre preferu nian karan Esperanton!
   return {
     props: {
       availableLogins,
-      ...(await serverSideTranslations(bestMatch ?? "en", ["common"])),
+      ...(await serverSideTranslations("eo", ["common"])),
     },
   };
 };
